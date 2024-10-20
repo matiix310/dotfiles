@@ -81,7 +81,6 @@ window#waybar {
 #memory,
 #disk,
 #idle_inhibitor {
-  font-family: "Symbols Nerd Font";
   font-size: 10pt;
   margin: 0;
   padding: 0 10px;
@@ -104,12 +103,14 @@ window#waybar {
   color: @green;
 }
 
-#battery.warning:not(.charging) {
+#battery.warning:not(.charging),
+#memory.warning {
   font-weight: bold;
   color: orange;
 }
 
-#battery.critical:not(.charging) {
+#battery.critical:not(.charging),
+#memory.critical {
   font-weight: bold;
   color: @red;
 }
@@ -125,4 +126,13 @@ window#waybar {
   border-radius: 10px;
   padding: 3px 12px;
   margin: 5px 5px 10px 5px;
+}
+
+/* apply nerdfont to texts */
+#network.speed,
+#cpu,
+#disk,
+#temperature,
+#clock {
+  font-family: "JetBrainsMono Nerd Font Mono";
 }
